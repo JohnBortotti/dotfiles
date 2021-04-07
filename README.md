@@ -1,13 +1,13 @@
-## My Dotfiles and other configs for development
+## Dotfiles and other config files
 
 ![Tmux](./img/tmux-screen.png)
 
-#### Tools that i use:
+## Tools that i use:
 * [Tmux](https://github.com/tmux/tmux/wiki)
 * [Oh my Zsh](https://github.com/ohmyzsh/ohmyzsh)
 * [NeoVim](https://github.com/neovim/neovim)
 
-### Configs 
+## Configs 
 #### * Tmux
 Any special or custom config, just use it for multiplex my terminal an be more efficient
 
