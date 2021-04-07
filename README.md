@@ -1,5 +1,7 @@
 ## My Dotfiles and other configs for development
 
+![Tmux](./img/tmux-screen.png)
+
 #### Tools that i use:
 * [Tmux](https://github.com/tmux/tmux/wiki)
 * [Oh my Zsh](https://github.com/ohmyzsh/ohmyzsh)
