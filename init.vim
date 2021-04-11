@@ -37,3 +37,4 @@ let g:airline_powerline_fonts = 1
 
 " NerdTree
 autocmd VimEnter * NERDTree
+let NERDTreeShowHidden=1
