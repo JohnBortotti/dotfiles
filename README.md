@@ -4,4 +4,4 @@
 * [Tmux](https://github.com/tmux/tmux/wiki)
 * [Zsh and Oh my Zsh](./zsh/readme-zsh.md)
 * [NeoVim](./nvim/readme-vim.md)
-* [i3 WM](https://i3wm.org/)
+* [i3 WM](./i3/i3-readme.md)
