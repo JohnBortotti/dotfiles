@@ -13,6 +13,7 @@ Plug 'codota/tabnine-vim'
 Plug 'mg979/vim-visual-multi', {'branch':'master'}
 Plug 'sheerun/vim-polyglot'
 Plug 'mileszs/ack.vim'
+Plug 'morhetz/gruvbox'
 " List ends here. Plugins become visible to Vim after this call.
 call plug#end()
 
@@ -39,3 +40,5 @@ let g:airline_powerline_fonts = 1
 autocmd VimEnter * NERDTree
 let NERDTreeShowHidden=1
 nmap <F6> :NERDTreeToggle<CR>
+
+colorscheme gruvbox
