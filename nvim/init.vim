@@ -40,5 +40,3 @@ let g:airline_powerline_fonts = 1
 autocmd VimEnter * NERDTree
 let NERDTreeShowHidden=1
 nmap <F6> :NERDTreeToggle<CR>
-
-colorscheme gruvbox
