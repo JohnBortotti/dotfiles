@@ -100,5 +100,3 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-echo '. $HOME/.asdf/asdf.sh' >> ~/.zshrc
-echo '. $HOME/.asdf/completions/asdf.bash' >> ~/.zshrc

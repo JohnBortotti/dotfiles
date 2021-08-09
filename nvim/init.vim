@@ -13,8 +13,7 @@ Plug 'codota/tabnine-vim'
 Plug 'mg979/vim-visual-multi', {'branch':'master'}
 Plug 'sheerun/vim-polyglot'
 Plug 'mileszs/ack.vim'
-Plug 'morhetz/gruvbox'
-" List ends here. Plugins become visible to Vim after this call.
+"List ends here. Plugins become visible to Vim after this call.
 call plug#end()
 
 " General configs
