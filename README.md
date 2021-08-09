@@ -6,3 +6,5 @@
 * [NeoVim](./nvim/readme-vim.md)
 * [i3 WM](./i3/i3-readme.md)
 * [Dunst](./dunst/dunst-readme.md)
+* [Asdf](./asdf/asdf-readme.md)
+* [Gogh](./gogh/gogh-readme.md)
