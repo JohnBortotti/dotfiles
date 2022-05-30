@@ -2,9 +2,14 @@ vim.cmd([[
 set number
 set t_Co=256
 set encoding=UTF-8
+:set tabstop=2
+:set shiftwidth=2
+:set expandtab
 
 " NvimTree
 nmap <S-E> :NvimTreeToggle<CR>
+
+
 
 " ToggletTerm
 nmap <S-T> :ToggleTerm<CR>
