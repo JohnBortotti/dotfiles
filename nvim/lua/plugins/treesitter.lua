@@ -1,7 +1,13 @@
-local treesitter = require("nvim-treesitter.configs")
+local M = {}
 
-treesitter.setup({
-	highlight = {
-		enable = true,
-	},
-})
+function M.setup()
+	local treesitter = require("nvim-treesitter.configs")
+
+	treesitter.setup({
+		highlight = {
+			enable = true,
+		},
+	})
+end
+
+return M
