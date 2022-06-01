@@ -9,10 +9,8 @@ set encoding=UTF-8
 " NvimTree
 nmap <S-E> :NvimTreeToggle<CR>
 
-
-
 " ToggletTerm
-nmap <S-T> :ToggleTerm<CR>
+nmap <S-T> :ToggleTerm size=25<CR>
 ]])
 
 vim.cmd([[
