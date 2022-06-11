@@ -109,11 +109,6 @@ return require("packer").startup(function()
 	use("L3MON4D3/LuaSnip")
 	use("rafamadriz/friendly-snippets")
 
-	-- Colorschemes
-	use("navarasu/onedark.nvim")
-	use("chriskempson/base16-vim")
-	use("sainnhe/sonokai")
-
 	-- Tree sitter
 	use({
 		"nvim-treesitter/nvim-treesitter",
@@ -130,4 +125,7 @@ return require("packer").startup(function()
 			vim.notify = require("notify")
 		end,
 	})
+
+	-- Colorschemes
+	use("sainnhe/sonokai")
 end)

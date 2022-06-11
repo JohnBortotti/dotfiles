@@ -20,7 +20,7 @@ end
 
 local sources = {
 	-- formatting
-	-- b.formatting.prettier,
+	b.formatting.prettier,
 	-- b.formatting.shfmt,
 	b.formatting.stylua,
 	b.formatting.fixjson,
@@ -34,8 +34,6 @@ local sources = {
 	b.diagnostics.eslint_d,
 	b.diagnostics.flake8,
 	b.diagnostics.tsc,
-	-- with_root_file(b.diagnostics.selene, "selene.toml"),
-	with_diagnostics_code(b.diagnostics.shellcheck),
 
 	-- code actions
 	b.code_actions.gitsigns,
