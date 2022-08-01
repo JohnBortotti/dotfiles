@@ -10,8 +10,8 @@ vim.cmd([[
 
 -- Tabs navigation
 vim.cmd([[
-  nmap <S-h> :tabp<CR>
-  nmap <S-l> :tabn<CR>
+  nmap <S-h> :bp<CR>
+  nmap <S-l> :bn<CR>
 ]])
 
 -- NvimTree
@@ -31,4 +31,6 @@ vim.cmd([[
 -- Colorscheme
 -- vim.cmd([[ set bg=dark ]])
 vim.cmd([[ set termguicolors ]])
-vim.cmd([[ colorscheme sonokai ]])
+-- vim.cmd([[ colorscheme sonokai ]])
+-- vim.cmd([[ colorscheme moonfly ]])
+vim.cmd([[ colorscheme gruvbox ]])

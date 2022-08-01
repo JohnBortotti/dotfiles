@@ -7,6 +7,7 @@ local servers = {
 	tsserver = {},
 	vimls = {},
 	cssls = {},
+	intelephense = {},
 }
 
 return servers

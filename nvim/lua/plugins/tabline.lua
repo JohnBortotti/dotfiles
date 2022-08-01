@@ -1,7 +1,7 @@
 local M = {}
 
 function M.setup()
-  require("Comment").setup({})
+  require("tabline").setup({})
 end
 
 return M
