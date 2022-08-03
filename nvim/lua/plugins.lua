@@ -2,9 +2,9 @@ vim.cmd([[packadd packer.nvim]])
 
 return require("packer").startup(function()
   -- Utils --
-  use("wbthomason/packer.nvim") -- Package manager use("tpope/vim-surround")
-  -- Autopairs
-  use({ -- Autopairs
+  use("wbthomason/packer.nvim") -- Package manager use("tpope/vim-surround") Autopairs use({ -- Autopairs
+
+  use({
     "windwp/nvim-autopairs",
     config = function()
       require("plugins/autopairs").setup()
@@ -138,6 +138,14 @@ return require("packer").startup(function()
     "kdheepak/tabline.nvim",
     config = function()
       require("plugins/tabline").setup()
+    end,
+  })
+
+  -- Dashboard
+  use({
+    "glepnir/dashboard-nvim",
+    config = function()
+      require("plugins/dashboard").setup()
     end,
   })
 
