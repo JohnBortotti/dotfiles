@@ -16,8 +16,17 @@ vim.cmd([[
 
 -- NvimTree
 vim.cmd([[
-  nmap <S-E> :NvimTreeToggle<CR> " ToggletTerm
+  nmap <S-E> :NvimTreeToggle<CR> 
+]])
+
+-- ToggletTerm
+vim.cmd([[
   nmap <S-T> :ToggleTerm size=25<CR>
+]])
+
+-- Zen-mode
+vim.cmd([[ 
+  nmap <S-P> :ZenMode<CR>
 ]])
 
 -- Packer
@@ -29,8 +38,5 @@ vim.cmd([[
 ]])
 
 -- Colorscheme
--- vim.cmd([[ set bg=dark ]])
 vim.cmd([[ set termguicolors ]])
--- vim.cmd([[ colorscheme sonokai ]])
--- vim.cmd([[ colorscheme moonfly ]])
 vim.cmd([[ colorscheme gruvbox ]])

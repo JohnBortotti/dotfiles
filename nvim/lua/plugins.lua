@@ -149,6 +149,18 @@ return require("packer").startup(function()
     end,
   })
 
+  -- zen mode
+  use({
+    "folke/zen-mode.nvim",
+    config = function()
+      require("plugins/zen-mode").setup({
+        -- your configuration comes here
+        -- or leave it empty to use the default settings
+        -- refer to the configuration section below
+      })
+    end,
+  })
+
   -- Colorschemes
   use("sainnhe/sonokai")
   use("axvr/photon.vim")
