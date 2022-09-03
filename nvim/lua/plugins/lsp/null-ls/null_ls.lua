@@ -36,7 +36,7 @@ local sources = {
 	b.diagnostics.tsc,
 
 	-- code actions
-	b.code_actions.gitsigns,
+	-- b.code_actions.gitsigns,
 	b.code_actions.gitrebase,
 
 	-- hover

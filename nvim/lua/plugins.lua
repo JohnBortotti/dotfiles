@@ -1,169 +1,147 @@
 vim.cmd([[packadd packer.nvim]])
 
 return require("packer").startup(function()
-  -- Utils --
-  use("wbthomason/packer.nvim") -- Package manager use("tpope/vim-surround") Autopairs use({ -- Autopairs
+	-- Utils --
 
-  use({
-    "windwp/nvim-autopairs",
-    config = function()
-      require("plugins/autopairs").setup()
-    end,
-  })
+	-- Package manager
+	use("wbthomason/packer.nvim")
 
-  -- Toggleterm
-  use({
-    "akinsho/toggleterm.nvim",
-    config = function()
-      require("plugins/toggleterm").setup()
-    end,
-  })
+	use({
+		"windwp/nvim-autopairs",
+		config = function()
+			require("plugins/autopairs").setup()
+		end,
+	})
 
-  -- Highlight
-  use("RRethy/vim-illuminate")
+	-- Toggleterm
+	use({
+		"akinsho/toggleterm.nvim",
+		config = function()
+			require("plugins/toggleterm").setup()
+		end,
+	})
 
-  -- Project managment
-  use({
-    "ahmedkhalf/project.nvim",
-    config = function()
-      require("plugins/project").setup()
-    end,
-  })
+	-- Highlight
+	use("RRethy/vim-illuminate")
 
-  -- Comment
-  use({
-    "numToStr/Comment.nvim",
-    config = function()
-      require("plugins/comment").setup()
-    end,
-  })
+	-- Project managment
+	use({
+		"ahmedkhalf/project.nvim",
+		config = function()
+			require("plugins/project").setup()
+		end,
+	})
 
-  -- Lualine
-  use({
-    "nvim-lualine/lualine.nvim",
-    config = function()
-      require("plugins/lualine").setup()
-    end,
-  })
+	-- Comment
+	use({
+		"numToStr/Comment.nvim",
+		config = function()
+			require("plugins/comment").setup()
+		end,
+	})
 
-  use({
-    "SmiteshP/nvim-gps", -- Lua line LSP infos provider
-    config = function()
-      require("nvim-gps").setup()
-    end,
-  })
+	-- Lualine
+	use({
+		"nvim-lualine/lualine.nvim",
+		config = function()
+			require("plugins/lualine").setup()
+		end,
+	})
 
-  -- Nvim tree
-  use({
-    "kyazdani42/nvim-tree.lua", -- nvim tree
-    requires = {
-      "kyazdani42/nvim-web-devicons", -- optional, for file icon
-    },
-    tag = "nightly", -- optional, updated every week. (see issue #1193)
-    config = function()
-      require("plugins/nvim-tree").setup()
-    end,
-  })
+	use({
+		"SmiteshP/nvim-gps", -- Lua line LSP infos provider
+		config = function()
+			require("nvim-gps").setup()
+		end,
+	})
 
-  -- Git
-  use({
-    "lewis6991/gitsigns.nvim", -- gitsigns
-    config = function()
-      require("plugins/gitsigns").setup()
-    end,
-  })
+	-- Nvim tree
+	use({
+		"kyazdani42/nvim-tree.lua", -- nvim tree
+		requires = {
+			"kyazdani42/nvim-web-devicons", -- optional, for file icon
+		},
+		tag = "nightly", -- optional, updated every week. (see issue #1193)
+		config = function()
+			require("plugins/nvim-tree").setup()
+		end,
+	})
 
-  -- Telescope
-  use({
-    "nvim-telescope/telescope.nvim", -- Telescope
-    requires = { { "nvim-lua/plenary.nvim" } },
-  })
+	-- Git
+	use({
+		"lewis6991/gitsigns.nvim", -- gitsigns
+		config = function()
+			require("plugins/gitsigns").setup()
+		end,
+	})
 
-  -- LSP
-  use({ -- LSP config provider
-    "neovim/nvim-lspconfig",
-    opt = true,
-    event = "BufReadPre",
-    config = function()
-      require("plugins/lsp").setup()
-    end,
-  })
+	-- Telescope
+	use({
+		"nvim-telescope/telescope.nvim", -- Telescope
+		requires = { { "nvim-lua/plenary.nvim" } },
+	})
 
-  use("williamboman/nvim-lsp-installer") -- LSP Server Installer
+	-- LSP
+	use({ -- LSP config provider
+		"neovim/nvim-lspconfig",
+		opt = true,
+		event = "BufReadPre",
+		config = function()
+			require("plugins/lsp").setup()
+		end,
+	})
 
-  use("jose-elias-alvarez/null-ls.nvim") -- Null-ls
+	use("williamboman/nvim-lsp-installer") -- LSP Server Installer
 
-  -- CMP packages
-  use("hrsh7th/nvim-cmp")
-  use("hrsh7th/cmp-nvim-lsp")
-  use("hrsh7th/cmp-buffer")
-  use("hrsh7th/cmp-path")
-  use("hrsh7th/cmp-cmdline")
-  use("saadparwaiz1/cmp_luasnip")
-  use("ray-x/lsp_signature.nvim")
-  use("onsails/lspkind-nvim")
+	use("jose-elias-alvarez/null-ls.nvim") -- Null-ls
 
-  -- Snippets
-  use("L3MON4D3/LuaSnip")
-  use("rafamadriz/friendly-snippets")
+	-- CMP packages
+	use("hrsh7th/nvim-cmp")
+	use("hrsh7th/cmp-nvim-lsp")
+	use("hrsh7th/cmp-buffer")
+	use("hrsh7th/cmp-path")
+	use("hrsh7th/cmp-cmdline")
+	use("saadparwaiz1/cmp_luasnip")
+	use("ray-x/lsp_signature.nvim")
+	use("onsails/lspkind-nvim")
 
-  -- Tree sitter
-  use({
-    "nvim-treesitter/nvim-treesitter",
-    config = function()
-      require("plugins/treesitter").setup()
-    end,
-  })
+	-- Snippets
+	use("L3MON4D3/LuaSnip")
+	use("rafamadriz/friendly-snippets")
 
-  -- Notify
-  use({
-    "rcarriga/nvim-notify",
-    event = "VimEnter",
-    config = function()
-      vim.notify = require("notify")
-    end,
-  })
+	-- Tree sitter
+	use({
+		"nvim-treesitter/nvim-treesitter",
+		config = function()
+			require("plugins/treesitter").setup()
+		end,
+	})
 
-  -- Neorg
-  use({
-    "nvim-neorg/neorg",
-    config = function()
-      require("plugins/neorg").setup()
-    end,
-    requires = "nvim-lua/plenary.nvim",
-  })
+	-- Neorg
+	use({
+		"nvim-neorg/neorg",
+		config = function()
+			require("plugins/neorg").setup()
+		end,
+		requires = "nvim-lua/plenary.nvim",
+	})
 
-  -- Tabline
-  use({
-    "kdheepak/tabline.nvim",
-    config = function()
-      require("plugins/tabline").setup()
-    end,
-  })
+	-- Tabline
+	use({
+		"kdheepak/tabline.nvim",
+		config = function()
+			require("plugins/tabline").setup()
+		end,
+	})
 
-  -- Dashboard
-  use({
-    "glepnir/dashboard-nvim",
-    config = function()
-      require("plugins/dashboard").setup()
-    end,
-  })
+	-- Dashboard
+	use({
+		"glepnir/dashboard-nvim",
+		config = function()
+			require("plugins/dashboard").setup()
+		end,
+	})
 
-  -- zen mode
-  use({
-    "folke/zen-mode.nvim",
-    config = function()
-      require("plugins/zen-mode").setup({
-        -- your configuration comes here
-        -- or leave it empty to use the default settings
-        -- refer to the configuration section below
-      })
-    end,
-  })
-
-  -- Colorschemes
-  use("sainnhe/sonokai")
-  use("axvr/photon.vim")
-  use("bluz71/vim-moonfly-colors")
-  use("morhetz/gruvbox")
+	-- Colorschemes
+	use("morhetz/gruvbox")
 end)

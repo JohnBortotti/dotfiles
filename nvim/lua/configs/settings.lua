@@ -24,11 +24,6 @@ vim.cmd([[
   nmap <S-T> :ToggleTerm size=25<CR>
 ]])
 
--- Zen-mode
-vim.cmd([[ 
-  nmap <S-P> :ZenMode<CR>
-]])
-
 -- Packer
 vim.cmd([[
   augroup packer_user_config
@@ -39,4 +34,10 @@ vim.cmd([[
 
 -- Colorscheme
 vim.cmd([[ set termguicolors ]])
-vim.cmd([[ colorscheme gruvbox ]])
+vim.cmd([[ set bg=dark ]])
+vim.cmd([[ set fillchars=eob:\ ]])
+vim.cmd([[ highlight Pmenu ctermbg=gray guibg=gray]])
+vim.cmd([[ highlight SignColumn guibg=bg ]])
+vim.cmd([[ highlight GitSignsAdd guibg=bg ctermbg=black guifg=green ]])
+vim.cmd([[ highlight GitSignsChange guibg=bg ctermbg=black guifg=yellow ]])
+vim.cmd([[ highlight GitSignsDelete guibg=bg ctermbg=black guifg=red ]])
