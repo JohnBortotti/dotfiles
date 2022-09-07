@@ -33,9 +33,9 @@ vim.cmd([[
 ]])
 
 -- Colorscheme
-vim.cmd([[ let g:hybrid_transparent_background = 1 ]])
+-- vim.cmd([[ let g:hybrid_transparent_background = 1 ]])
 vim.cmd([[ colorscheme hybrid_material ]])
--- vim.cmd([[ set bg=dark ]])
+vim.cmd([[ set bg=dark ]])
 vim.cmd([[ set fillchars=eob:\ ]])
 vim.cmd([[ highlight SignColumn guibg=bg ]])
 -- vim.cmd([[ highlight GitSignsAdd guibg=bg ctermbg=black guifg=green ]])
