@@ -10,11 +10,6 @@ function M.setup()
 			action = "NvimTreeFocus",
 		},
 		{
-			icon = "  ",
-			desc = "Open org-mode                           ",
-			action = "NeorgStart",
-		},
-		{
 			icon = "  ",
 			desc = "Find  File                              ",
 			action = "Telescope find_files find_command=rg,--hidden,--files",

@@ -117,13 +117,13 @@ return require("packer").startup(function()
   })
 
   -- Neorg
-  use({
-    "nvim-neorg/neorg",
-    config = function()
-      require("plugins/neorg").setup()
-    end,
-    requires = "nvim-lua/plenary.nvim",
-  })
+  -- use({
+  --   "nvim-neorg/neorg",
+  --   config = function()
+  --     require("plugins/neorg").setup()
+  --   end,
+  --   requires = "nvim-lua/plenary.nvim",
+  -- })
 
   -- Tabline
   use({
