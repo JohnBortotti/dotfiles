@@ -12,24 +12,9 @@ return require("packer").startup(function()
     end,
   })
 
-  -- Toggleterm
-  use({
-    "akinsho/toggleterm.nvim",
-    config = function()
-      require("plugins/toggleterm").setup()
-    end,
-  })
-
   -- Highlight
   use("RRethy/vim-illuminate")
 
-  -- Project managment
-  use({
-    "ahmedkhalf/project.nvim",
-    config = function()
-      require("plugins/project").setup()
-    end,
-  })
 
   -- Comment
   use({
@@ -54,25 +39,8 @@ return require("packer").startup(function()
     end,
   })
 
-  -- Nvim tree
-  use({
-    "kyazdani42/nvim-tree.lua", -- nvim tree
-    requires = {
-      "kyazdani42/nvim-web-devicons", -- optional, for file icon
-    },
-    tag = "nightly", -- optional, updated every week. (see issue #1193)
-    config = function()
-      require("plugins/nvim-tree").setup()
-    end,
-  })
-
-  -- Git
-  use({
-    "lewis6991/gitsigns.nvim", -- gitsigns
-    config = function()
-      require("plugins/gitsigns").setup()
-    end,
-  })
+  -- Nerdtree
+  use("preservim/nerdtree")
 
   -- Telescope
   use({
@@ -91,7 +59,6 @@ return require("packer").startup(function()
   })
 
   use("williamboman/nvim-lsp-installer") -- LSP Server Installer
-
   use("jose-elias-alvarez/null-ls.nvim") -- Null-ls
 
   -- CMP packages
@@ -116,31 +83,6 @@ return require("packer").startup(function()
     end,
   })
 
-  -- Neorg
-  -- use({
-  --   "nvim-neorg/neorg",
-  --   config = function()
-  --     require("plugins/neorg").setup()
-  --   end,
-  --   requires = "nvim-lua/plenary.nvim",
-  -- })
-
-  -- Tabline
-  use({
-    "kdheepak/tabline.nvim",
-    config = function()
-      require("plugins/tabline").setup()
-    end,
-  })
-
-  -- Dashboard
-  use({
-    "glepnir/dashboard-nvim",
-    config = function()
-      require("plugins/dashboard").setup()
-    end,
-  })
 
   -- Colorschemes
-  use("kristijanhusak/vim-hybrid-material")
 end)
