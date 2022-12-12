@@ -1,14 +1,3 @@
-local servers = {
-    html = {},
-    jsonls = {},
-    pyright = {},
-    rust_analyzer = {},
-    sumneko_lua = {},
-    tsserver = {},
-    vimls = {},
-    cssls = {},
-    intelephense = {},
-    ccls = {}
-}
-
-return servers
+-- lsp servers
+require'lspconfig'.clangd.setup{}
+require'lspconfig'.tsserver.setup{}

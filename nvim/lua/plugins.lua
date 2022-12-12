@@ -1,88 +1,81 @@
 vim.cmd([[packadd packer.nvim]])
 return require("packer").startup(function()
-  -- Utils --
+    -- Package manager
+    use("wbthomason/packer.nvim")
 
-  -- Package manager
-  use("wbthomason/packer.nvim")
+    -- Autopairs
+    use({
+        "windwp/nvim-autopairs",
+        config = function()
+            require("plugins/autopairs").setup()
+        end
+    })
 
-  use({
-    "windwp/nvim-autopairs",
-    config = function()
-      require("plugins/autopairs").setup()
-    end,
-  })
+    -- Comment
+    use({
+        "numToStr/Comment.nvim",
+        config = function()
+            require("plugins/comment").setup()
+        end
+    })
 
-  -- Highlight
-  use("RRethy/vim-illuminate")
+    -- Lualine
+    use({
+        "nvim-lualine/lualine.nvim",
+        config = function()
+            require("plugins/lualine").setup()
+        end
+    })
 
+    -- Telescope
+    use({
+        "nvim-telescope/telescope.nvim",
+        requires = {{"nvim-lua/plenary.nvim"}}
+    })
 
-  -- Comment
-  use({
-    "numToStr/Comment.nvim",
-    config = function()
-      require("plugins/comment").setup()
-    end,
-  })
+    -- LSP
+    -- LSPconfig layer for nvim-lsp
+    use('neovim/nvim-lspconfig')
 
-  -- Lualine
-  use({
-    "nvim-lualine/lualine.nvim",
-    config = function()
-      require("plugins/lualine").setup()
-    end,
-  })
+    -- Completion engine
+    use('hrsh7th/nvim-cmp')
 
-  use({
-    "SmiteshP/nvim-gps", -- Lua line LSP infos provider
-    config = function()
-      require("nvim-gps").setup()
-    end,
-  })
+    -- Completion with lsp capabilities
+    use('hrsh7th/cmp-nvim-lsp')
 
-  -- Nerdtree
-  use("preservim/nerdtree")
+    -- Completion with buffer data
+    use('hrsh7th/cmp-buffer')
 
-  -- Telescope
-  use({
-    "nvim-telescope/telescope.nvim", -- Telescope
-    requires = { { "nvim-lua/plenary.nvim" } },
-  })
+    -- Completion with filesystem paths
+    use('hrsh7th/cmp-path')
 
-  -- LSP
-  use({ -- LSP config provider
-    "neovim/nvim-lspconfig",
-    opt = true,
-    event = "BufReadPre",
-    config = function()
-      require("plugins/lsp").setup()
-    end,
-  })
+    -- Sinppets
+    use('L3MON4D3/LuaSnip')
+    use('saadparwaiz1/cmp_luasnip')
 
-  use("williamboman/nvim-lsp-installer") -- LSP Server Installer
-  use("jose-elias-alvarez/null-ls.nvim") -- Null-ls
+    -- Snippets collection
+    use('rafamadriz/friendly-snippets')
 
-  -- CMP packages
-  use("hrsh7th/nvim-cmp")
-  use("hrsh7th/cmp-nvim-lsp")
-  use("hrsh7th/cmp-buffer")
-  use("hrsh7th/cmp-path")
-  use("hrsh7th/cmp-cmdline")
-  use("saadparwaiz1/cmp_luasnip")
-  use("ray-x/lsp_signature.nvim")
-  use("onsails/lspkind-nvim")
+    -- Function Signatures
+    use('ray-x/lsp_signature.nvim')
 
-  -- Snippets
-  use("L3MON4D3/LuaSnip")
-  use("rafamadriz/friendly-snippets")
+    -- LSP server installer
+    use({
+        "williamboman/mason.nvim",
+        config = function()
+            require("mason").setup()
+        end
+    })
 
-  -- Tree sitter
-  use({
-    "nvim-treesitter/nvim-treesitter",
-    config = function()
-      require("plugins/treesitter").setup()
-    end,
-  })
+    --- end LSP
 
+    -- Tree sitter
+    use({
+        "nvim-treesitter/nvim-treesitter",
+        config = function()
+            require("plugins/treesitter").setup()
+        end
+    })
 
-  -- Colorschemes
+    -- Colorschemes
 end)

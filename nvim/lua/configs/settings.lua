@@ -5,15 +5,9 @@ vim.cmd([[
   set encoding=UTF-8
 ]])
 
--- Nerdtree
+-- Netrw
 vim.cmd([[
-  let NERDTreeShowHidden=1
-  nmap <S-E> :NERDTreeToggle<CR> 
-]])
-
--- Telescope
-vim.cmd([[
-  nmap <S-T> :Telescope<CR>
+  let netrw_liststyle=3
 ]])
 
 -- Disable sign column
