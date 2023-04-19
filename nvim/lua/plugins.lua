@@ -30,8 +30,13 @@ return require("packer").startup(function()
     -- Telescope
     use({
         "nvim-telescope/telescope.nvim",
-        requires = {{"nvim-lua/plenary.nvim"}}
+        requires = {{"nvim-lua/plenary.nvim"}},
+        config = function()
+            require('plugins/telescope/telescope').setup()
+        end
     })
+
+    -- end Telescope
 
     -- LSP
     -- LSPconfig layer for nvim-lsp
@@ -66,7 +71,6 @@ return require("packer").startup(function()
             require("mason").setup()
         end
     })
-
     --- end LSP
 
     -- Tree sitter
@@ -78,4 +82,5 @@ return require("packer").startup(function()
     })
 
     -- Colorschemes
+    use("rebelot/kanagawa.nvim")
 end)

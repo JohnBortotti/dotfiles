@@ -23,5 +23,6 @@ vim.cmd([[
   augroup end
 ]])
 
--- Colorscheme
+-- colorscheme
 vim.cmd([[ set fillchars=eob:\ ]])
+-- vim.cmd([[ colorscheme kanagawa ]])
