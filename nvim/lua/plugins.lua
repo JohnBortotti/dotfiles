@@ -1,86 +1,112 @@
-vim.cmd([[packadd packer.nvim]])
-return require("packer").startup(function()
-    -- Package manager
-    use("wbthomason/packer.nvim")
+return {
+	-- Colorschemes
+	{
+		"rebelot/kanagawa.nvim",
+		lazy = false,
+		priority = 1000,
+		config = function()
+			vim.cmd([[
+		    set number
+		    set t_Co=256
+		    set encoding=UTF-8
+		    ]])
+			vim.cmd([[
+		    let netrw_liststyle=3
+		    ]])
+			vim.cmd([[
+		    set scl=no
+		    ]])
+			vim.cmd([[ set fillchars=eob:\ ]])
+			vim.cmd([[ colorscheme kanagawa-dragon ]])
+		end,
+	},
 
-    -- Autopairs
-    use({
-        "windwp/nvim-autopairs",
-        config = function()
-            require("plugins/autopairs").setup()
-        end
-    })
+	-- Comments
+	{
+		"numToStr/Comment.nvim",
+		config = function()
+			require("Comment").setup()
+		end,
+	},
+	-- Lualine
+	{
+		"nvim-lualine/lualine.nvim",
+		config = function()
+			require("lualine").setup({
+				options = {
+					theme = "powerline",
+					component_separators = {
+						left = "",
+						right = "",
+					},
+					section_separators = {
+						left = "",
+						right = "",
+					},
+				},
+			})
+		end,
+	},
+	-- Autopairs
+	{
+		"windwp/nvim-autopairs",
+		config = function()
+			require("nvim-autopairs").setup({
+				enable_check_bracket_line = false,
+			})
+		end,
+	},
+	-- Telescope
+	{
+		"nvim-telescope/telescope.nvim",
+		dependencies = { "nvim-lua/plenary.nvim" },
+		keys = {
+			{ "<S-T>", ":Telescope<CR>" },
+		},
+		config = function()
+			require("telescope").setup({})
+		end,
+	},
+	-- end Telescope
+	-- LSP
+	-- LSPconfig layer for nvim-lsp
+	{ "neovim/nvim-lspconfig" },
+	-- Completion engine
+	{ "hrsh7th/nvim-cmp" },
+	-- Completion with lsp capabilities
+	{ "hrsh7th/cmp-nvim-lsp" },
+	-- Completion with buffer data
+	{ "hrsh7th/cmp-buffer" },
+	-- Completion with filesystem paths
+	{ "hrsh7th/cmp-path" },
+	-- Sinppets
+	{ "L3MON4D3/LuaSnip" },
+	{ "saadparwaiz1/cmp_luasnip" },
+	-- Snippets collection
+	{ "rafamadriz/friendly-snippets" },
+	-- Function Signatures
+	{ "ray-x/lsp_signature.nvim" },
+	-- LSP server installer
+	{
+		"williamboman/mason.nvim",
+		config = function()
+			require("mason").setup()
+		end,
+	},
+	--- end LSP
+	-- Tree sitter
+	{
+		"nvim-treesitter/nvim-treesitter",
+		config = function()
+			local treesitter = require("nvim-treesitter.configs")
 
-    -- Comment
-    use({
-        "numToStr/Comment.nvim",
-        config = function()
-            require("plugins/comment").setup()
-        end
-    })
-
-    -- Lualine
-    use({
-        "nvim-lualine/lualine.nvim",
-        config = function()
-            require("plugins/lualine").setup()
-        end
-    })
-
-    -- Telescope
-    use({
-        "nvim-telescope/telescope.nvim",
-        requires = {{"nvim-lua/plenary.nvim"}},
-        config = function()
-            require('plugins/telescope/telescope').setup()
-        end
-    })
-
-    -- end Telescope
-
-    -- LSP
-    -- LSPconfig layer for nvim-lsp
-    use('neovim/nvim-lspconfig')
-
-    -- Completion engine
-    use('hrsh7th/nvim-cmp')
-
-    -- Completion with lsp capabilities
-    use('hrsh7th/cmp-nvim-lsp')
-
-    -- Completion with buffer data
-    use('hrsh7th/cmp-buffer')
-
-    -- Completion with filesystem paths
-    use('hrsh7th/cmp-path')
-
-    -- Sinppets
-    use('L3MON4D3/LuaSnip')
-    use('saadparwaiz1/cmp_luasnip')
-
-    -- Snippets collection
-    use('rafamadriz/friendly-snippets')
-
-    -- Function Signatures
-    use('ray-x/lsp_signature.nvim')
-
-    -- LSP server installer
-    use({
-        "williamboman/mason.nvim",
-        config = function()
-            require("mason").setup()
-        end
-    })
-    --- end LSP
-
-    -- Tree sitter
-    use({
-        "nvim-treesitter/nvim-treesitter",
-        config = function()
-            require("plugins/treesitter").setup()
-        end
-    })
-
-    -- Colorschemes
-    use("rebelot/kanagawa.nvim")
-end)
+			treesitter.setup({
+				-- ensure_installed = { "c", "lua", "rust", "javascript", "php" },
+				sync_install = false,
+				highlight = {
+					enable = true,
+				},
+			})
+		end,
+	},
+}
