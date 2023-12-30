@@ -12,4 +12,9 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
+-- set leader
+vim.cmd([[
+	let mapleader="\<Space>"
+]])
+
 require("lazy").setup("plugins")

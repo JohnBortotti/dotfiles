@@ -1,34 +1,47 @@
 return {
-	-- Colorschemes
+	-- colorschemes
 	{
 		"rebelot/kanagawa.nvim",
 		lazy = false,
 		priority = 1000,
 		config = function()
+			-- nvim configs
 			vim.cmd([[
 		    set number
 		    set t_Co=256
 		    set encoding=UTF-8
 		    ]])
+			-- netrw
 			vim.cmd([[
 		    let netrw_liststyle=3
+			let netrw_winsize=30
+			let g:netrw_banner = 0
 		    ]])
 			vim.cmd([[
 		    set scl=no
 		    ]])
+			-- colorscheme
 			vim.cmd([[ set fillchars=eob:\ ]])
 			vim.cmd([[ colorscheme kanagawa-dragon ]])
+			-- key mappings
+			vim.cmd([[
+				nnoremap <leader>e :Lexplore<CR>
+				nnoremap <leader>h :noh<CR>
+				nnoremap <leader>t :Telescope<CR>
+				nnoremap <leader>x :bd<CR>
+				nnoremap <leader>w :w<CR>
+			]])
+			vim.api.nvim_set_keymap('n', '<Leader>bf', '<Cmd>lua vim.lsp.buf.format()<CR>', { noremap = true, silent = true })
 		end,
 	},
-
-	-- Comments
+	-- comments
 	{
 		"numToStr/Comment.nvim",
 		config = function()
 			require("Comment").setup()
 		end,
 	},
-	-- Lualine
+	-- lualine
 	{
 		"nvim-lualine/lualine.nvim",
 		config = function()
@@ -47,7 +60,7 @@ return {
 			})
 		end,
 	},
-	-- Autopairs
+	-- autopairs
 	{
 		"windwp/nvim-autopairs",
 		config = function()
@@ -56,13 +69,10 @@ return {
 			})
 		end,
 	},
-	-- Telescope
+	-- telescope
 	{
 		"nvim-telescope/telescope.nvim",
 		dependencies = { "nvim-lua/plenary.nvim" },
-		keys = {
-			{ "<S-T>", ":Telescope<CR>" },
-		},
 		config = function()
 			require("telescope").setup({})
 		end,
@@ -71,20 +81,20 @@ return {
 	-- LSP
 	-- LSPconfig layer for nvim-lsp
 	{ "neovim/nvim-lspconfig" },
-	-- Completion engine
+	-- completion engine
 	{ "hrsh7th/nvim-cmp" },
-	-- Completion with lsp capabilities
+	-- completion with lsp capabilities
 	{ "hrsh7th/cmp-nvim-lsp" },
-	-- Completion with buffer data
+	-- completion with buffer data
 	{ "hrsh7th/cmp-buffer" },
-	-- Completion with filesystem paths
+	-- completion with filesystem paths
 	{ "hrsh7th/cmp-path" },
-	-- Sinppets
+	-- sinppets
 	{ "L3MON4D3/LuaSnip" },
 	{ "saadparwaiz1/cmp_luasnip" },
-	-- Snippets collection
+	-- snippets collection
 	{ "rafamadriz/friendly-snippets" },
-	-- Function Signatures
+	-- function Signatures
 	{ "ray-x/lsp_signature.nvim" },
 	-- LSP server installer
 	{
@@ -94,7 +104,7 @@ return {
 		end,
 	},
 	--- end LSP
-	-- Tree sitter
+	-- tree sitter
 	{
 		"nvim-treesitter/nvim-treesitter",
 		config = function()

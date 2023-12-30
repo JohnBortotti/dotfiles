@@ -59,8 +59,8 @@ cmp.setup({
 			require("luasnip").lsp_expand(args.body)
 		end,
 	},
+	
 	mapping = {
-
 		["<C-n>"] = cmp.mapping.select_next_item({
 			behavior = cmp.SelectBehavior.Insert,
 		}),
