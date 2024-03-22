@@ -17,4 +17,14 @@ vim.cmd([[
 	let mapleader="\<Space>"
 ]])
 
+-- custom function to toggle background (dark or light)
+function toggleBackground()
+    local current_bg = vim.o.background
+    if current_bg == 'dark' then
+        vim.o.background = 'light'
+    else
+        vim.o.background = 'dark'
+    end
+end
+
 require("lazy").setup("plugins")

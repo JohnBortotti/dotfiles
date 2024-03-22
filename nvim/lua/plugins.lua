@@ -1,3 +1,14 @@
+-- local function toggleBackground()
+--     local current_bg = vim.o.background
+--     if current_bg == 'dark' then
+--         vim.o.background = 'light'
+--     else
+--         vim.o.background = 'dark'
+--     end
+--     -- vim.cmd('colorscheme ' .. vim.g.colors_name)
+-- end
+
+
 return {
 	-- colorschemes
 	{
@@ -31,14 +42,19 @@ return {
 			-- colorscheme
 			vim.cmd([[ set fillchars=eob:\ ]])
 			vim.cmd([[ colorscheme kanagawa-dragon ]])
-			-- key mappings
+	
+			-- key mappings, functions, alias
+			vim.cmd([[ command ToggleBackground lua toggleBackground() ]])
 			vim.cmd([[
-				nnoremap <leader>e :Lexplore<CR>
+				nnoremap <leader>e :find .<CR>
 				nnoremap <leader>h :noh<CR>
 				nnoremap <leader>t :Telescope<CR>
 				nnoremap <leader>x :bd<CR>
 				nnoremap <leader>w :w<CR>
+				nnoremap <leader>p :ToggleBackground<CR>
+				nnoremap <leader>ls :Telescope buffers<CR>
 			]])
+
 			vim.api.nvim_set_keymap('n', '<Leader>bf', '<Cmd>lua vim.lsp.buf.format()<CR>', { noremap = true, silent = true })
 		end,
 	},
