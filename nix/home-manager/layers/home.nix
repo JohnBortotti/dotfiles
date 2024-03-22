@@ -1,12 +1,6 @@
-{ config, pkgs, ... }:
+{ config, pkgs, dotfiles, ... }:
 
 let 
-  dotfiles = pkgs.fetchFromGitHub {
-    owner = "JohnBortotti";
-    repo = "dotfiles";
-    rev = "master";
-    sha256 = "sha256-8GvvOkpj+7+QmRUgAZnX+2Nz6vxvvRyroMihdZGYi9I=";
-  };
 
 in {
   home = {

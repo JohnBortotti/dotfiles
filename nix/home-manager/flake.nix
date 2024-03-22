@@ -8,9 +8,14 @@
       url = "github:nix-community/home-manager/master"; 
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    dotfiles = {
+      url = "";
+      flake = false;
+    };
   };
 
-  outputs = { self, nixpkgs, home-manager, ... }: 
+  outputs = { self, nixpkgs, home-manager, dotfiles, ... }: 
       let
         system = "x86_64-linux";
         pkgs = nixpkgs.legacyPackages.${system};
@@ -18,6 +23,7 @@
         homeConfigurations = {
           "joao" = home-manager.lib.homeManagerConfiguration {
 	    inherit pkgs;
+	    extraSpecialArgs = { inherit dotfiles; };
 
 	    modules = [
 	      ./layers/home.nix
