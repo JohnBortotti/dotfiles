@@ -10,7 +10,7 @@
     };
 
     dotfiles = {
-      url = "";
+      url = "github:JohnBortotti/dotfiles/master";
       flake = false;
     };
   };

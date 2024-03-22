@@ -19,7 +19,7 @@ in {
       pkgs.bash-completion
     ];
 
-    file.".config/nvim/".source = "${dotfiles}/nvim/";
+    file."/home/joao/.config/nvim/".source = "${dotfiles}/nvim/";
     file."/etc/tmux.conf".source = "${dotfiles}/tmux/tmux.conf";
 
   };
