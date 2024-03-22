@@ -96,14 +96,6 @@ return {
 	{ "rafamadriz/friendly-snippets" },
 	-- function Signatures
 	{ "ray-x/lsp_signature.nvim" },
-	-- LSP server installer
-	{
-		"williamboman/mason.nvim",
-		config = function()
-			require("mason").setup()
-		end,
-	},
-	--- end LSP
 	-- tree sitter
 	{
 		"nvim-treesitter/nvim-treesitter",
