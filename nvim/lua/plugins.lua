@@ -5,6 +5,14 @@ return {
 		lazy = false,
 		priority = 1000,
 		config = function()
+		   -- colorscheme configs
+		   require("kanagawa").setup({
+			background = {
+			  dark = "dragon",
+			  light = "lotus"
+			}
+		   })
+
 			-- nvim configs
 			vim.cmd([[
 		    set number
