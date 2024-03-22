@@ -1,14 +1,3 @@
--- local function toggleBackground()
---     local current_bg = vim.o.background
---     if current_bg == 'dark' then
---         vim.o.background = 'light'
---     else
---         vim.o.background = 'dark'
---     end
---     -- vim.cmd('colorscheme ' .. vim.g.colors_name)
--- end
-
-
 return {
 	-- colorschemes
 	{
@@ -71,7 +60,7 @@ return {
 		config = function()
 			require("lualine").setup({
 				options = {
-					theme = "powerline",
+					theme = "auto",
 					component_separators = {
 						left = "",
 						right = "",
