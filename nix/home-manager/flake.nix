@@ -27,7 +27,7 @@
 
 	    modules = [
 	      ./layers/home.nix
-	      #./layers/dev.nix
+	      ./layers/dev.nix
 	    ];
 
           };
