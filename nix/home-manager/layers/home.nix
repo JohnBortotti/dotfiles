@@ -17,15 +17,11 @@ in {
       pkgs.bat
       pkgs.eza
       pkgs.bash-completion
+      pkgs.tmux
     ];
 
-    file."/home/joao/.config/nvim/".source = "${dotfiles}/nvim/";
-    file."/etc/tmux.conf".source = "${dotfiles}/tmux/tmux.conf";
-
-  };
-
-  programs.tmux = {
-    enable = true;
+    file.".config/nvim/".source = "${dotfiles}/nvim/";
+    file.".config/tmux/".source = "${dotfiles}/tmux/";
   };
 
   programs.neovim = {
