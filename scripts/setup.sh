@@ -33,13 +33,14 @@ fi
 
 # check if the dotfiles directory already exists
 if [ -d "$HOME/dotfiles" ]; then
-    echo "dotfiles directory already exists, verify and delete the directory, aborting script..."
-    exit 1
+    echo -e "dotfiles directory already exists. Updating repository...\n"
+    cd ~/dotfiles
+    git pull
+else
+    # clone dotfiles repository
+    echo -e "cloning dotfiles repository...\n"
+    git clone https://github.com/JohnBortotti/dotfiles.git ~/dotfiles || { echo "cloning failed. Exiting..."; exit 1; }
 fi
-
-# clone dotfiles repository
-echo -e "cloning dotfiles repository...\n"
-git clone https://github.com/JohnBortotti/dotfiles.git ~/dotfiles
 
 # nun Home Manager flake
 echo -e "running Home Manager flake...\n"
