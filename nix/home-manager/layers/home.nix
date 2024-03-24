@@ -13,7 +13,6 @@ in {
       pkgs.git 
       pkgs.curl 
       pkgs.docker 
-      pkgs.tailscale
       pkgs.bat
       pkgs.eza
       pkgs.bash-completion
