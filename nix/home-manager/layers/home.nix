@@ -12,7 +12,6 @@ in {
       pkgs.htop
       pkgs.git 
       pkgs.curl 
-      pkgs.docker 
       pkgs.bat
       pkgs.eza
       pkgs.bash-completion
