@@ -15,7 +15,7 @@ return {
 
 			-- nvim configs
 			vim.cmd([[
-		    set number
+		    set relativenumber
 		    set t_Co=256
 		    set encoding=UTF-8
 		    ]])
