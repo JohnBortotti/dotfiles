@@ -19,6 +19,7 @@ return {
       set t_Co=256
       set encoding=UTF-8
       set shiftwidth=2
+      set tabstop=2
       ]])
       -- netrw
       vim.cmd([[
