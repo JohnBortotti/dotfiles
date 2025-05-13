@@ -104,7 +104,7 @@ cmp.setup({
 })
 
 -- Loads snippets collection
-require("luasnip/loaders/from_vscode").load()
+require("luasnip/loaders/from_vscode").lazy_load()
 
 -- Define diagnostic signs with explicit highlight groups
 vim.fn.sign_define("DiagnosticSignError", {text = "E", texthl = "DiagnosticSignError", linehl = "", numhl = ""})

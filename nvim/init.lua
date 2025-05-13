@@ -14,7 +14,7 @@ vim.opt.rtp:prepend(lazypath)
 
 -- set leader
 vim.cmd([[
-let mapleader="\<Space>"
+	let mapleader="\<Space>"
 ]])
 
 -- custom function to toggle background (dark or light)

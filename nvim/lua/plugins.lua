@@ -7,30 +7,30 @@ return {
     config = function()
       -- colorscheme configs
       require("kanagawa").setup({
-				background = {
-					dark = "dragon",
-					light = "lotus"
-				}
+	background = {
+	  dark = "dragon",
+	  light = "lotus"
+	}
       })
 
       -- nvim configs
       vim.cmd([[
-				set relativenumber
-				set t_Co=256
-				set encoding=UTF-8
-				set shiftwidth=2
-				set tabstop=2
+	set relativenumber
+      	set t_Co=256
+	set encoding=UTF-8
+	set expandtab
+	set shiftwidth=2
       ]])
 
       -- netrw
       vim.cmd([[
-				let netrw_liststyle=3
-				let netrw_winsize=30
-				let g:netrw_banner = 0
+	let netrw_liststyle=3
+	let netrw_winsize=30
+	let g:netrw_banner = 0
       ]])
 
       vim.cmd([[
-				set scl=no
+	set scl=no
       ]])
 
       -- set colorscheme
@@ -39,21 +39,21 @@ return {
 
       -- toggleBackground function
       vim.cmd([[ 
-				command ToggleBackground lua toggleBackground() 
+	command ToggleBackground lua toggleBackground() 
       ]])
 
       -- key mappings, functions, alias
       vim.cmd([[
-				nnoremap <leader>e :find .<CR>
-				nnoremap <leader>h :noh<CR>
-				nnoremap <leader>t :Telescope<CR>
-				nnoremap <leader>x :bd<CR>
-				nnoremap <leader>w :w<CR>
-				nnoremap <leader>s :Telescope live_grep<CR>
-				nnoremap <leader>p :Telescope find_files<CR>
-				nnoremap <leader>o :ToggleBackground<CR>
-				nnoremap <leader>ls :Telescope buffers<CR>
-				nnoremap <leader>. :LspInfo<CR>
+	nnoremap <leader>e :find .<CR>
+	nnoremap <leader>h :noh<CR>
+	nnoremap <leader>t :Telescope<CR>
+	nnoremap <leader>x :bd<CR>
+	nnoremap <leader>w :w<CR>
+	nnoremap <leader>s :Telescope live_grep<CR>
+	nnoremap <leader>p :Telescope find_files<CR>
+	nnoremap <leader>o :ToggleBackground<CR>
+	nnoremap <leader>ls :Telescope buffers<CR>
+	nnoremap <leader>. :LspInfo<CR>
       ]])
 
       vim.api.nvim_set_keymap('n', '<Leader>bf', '<Cmd>lua vim.lsp.buf.format()<CR>', { noremap = true, silent = true })
@@ -73,17 +73,17 @@ return {
     "nvim-lualine/lualine.nvim",
     config = function()
       require("lualine").setup({
-				options = {
-					theme = "auto",
-					component_separators = {
-						left = "",
-						right = "",
-					},
-					section_separators = {
-						left = "",
-						right = "",
-					},
-				},
+	options = {
+	  theme = "auto",
+	  component_separators = {
+	    left = "",
+	    right = "",
+	  },
+	  section_separators = {
+	    left = "",
+	    right = "",
+	  },
+	},
       })
     end,
   },
@@ -93,7 +93,7 @@ return {
     "windwp/nvim-autopairs",
     config = function()
       require("nvim-autopairs").setup({
-				enable_check_bracket_line = false,
+	enable_check_bracket_line = false,
       })
     end,
   },
@@ -120,13 +120,16 @@ return {
   { "hrsh7th/cmp-path" },
   
   -- LSP sinppets
-  { "L3MON4D3/LuaSnip" },
+  { 
+    "L3MON4D3/LuaSnip",
+    dependencies = { "rafamadriz/friendly-snippets" }
+  },
   { "saadparwaiz1/cmp_luasnip" },
   -- snippets collection
   { "rafamadriz/friendly-snippets" },
   -- function Signatures
   { "ray-x/lsp_signature.nvim" },
-  
+
   -- tree sitter
   {
     "nvim-treesitter/nvim-treesitter",
@@ -134,10 +137,10 @@ return {
       local treesitter = require("nvim-treesitter.configs")
 
       treesitter.setup({
-				sync_install = false,
-				highlight = {
-					enable = true,
-				},
+	sync_install = false,
+	highlight = {
+	  enable = true,
+	},
       })
     end,
   },
