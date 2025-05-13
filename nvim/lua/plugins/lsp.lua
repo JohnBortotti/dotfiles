@@ -1,5 +1,5 @@
 -- lsp servers
--- https://github.com/neovim/nvim-lspconfig/tree/master/lua/lspconfig/server_configurations
+-- https://github.com/neovim/nvim-lspconfig/tree/master/lua/lspconfig/configs
 require("lspconfig").ocamllsp.setup({})
 require("lspconfig").rust_analyzer.setup({})
 require("lspconfig").pylsp.setup({})
@@ -105,5 +105,20 @@ cmp.setup({
 
 -- Loads snippets collection
 require("luasnip/loaders/from_vscode").load()
+
+-- Define diagnostic signs with explicit highlight groups
+vim.fn.sign_define("DiagnosticSignError", {text = "E", texthl = "DiagnosticSignError", linehl = "", numhl = ""})
+vim.fn.sign_define("DiagnosticSignWarn",  {text = "W", texthl = "DiagnosticSignWarn", linehl = "", numhl = ""})
+vim.fn.sign_define("DiagnosticSignInfo",  {text = "I", texthl = "DiagnosticSignInfo", linehl = "", numhl = ""})
+vim.fn.sign_define("DiagnosticSignHint",  {text = "H", texthl = "DiagnosticSignHint", linehl = "", numhl = ""})
+
+-- Configure diagnostics display
+vim.diagnostic.config({
+  virtual_text = true,      -- Show diagnostic text after line (set to false if you don't want this)
+  signs = true,             -- Show signs in signcolumn
+  underline = true,         -- Underline the text with diagnostic error
+  update_in_insert = false, -- Don't update diagnostics in insert mode
+  severity_sort = true,     -- Sort by severity
+})
 
 return {}
