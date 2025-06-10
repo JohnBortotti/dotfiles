@@ -30,7 +30,7 @@ return {
 
       -- set colorscheme
       vim.cmd([[ set fillchars=eob:\ ]])
-      vim.cmd([[ colorscheme kanagawa-dragon ]])
+      vim.cmd([[ colorscheme PaperColor ]])
 
       -- toggleBackground function
       vim.cmd([[ 
