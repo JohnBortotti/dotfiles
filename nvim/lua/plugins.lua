@@ -25,12 +25,13 @@ return {
       ]])
 
       vim.cmd([[
-	set scl=no
+	set scl=yes
       ]])
 
       -- set colorscheme
       vim.cmd([[ set fillchars=eob:\ ]])
       vim.cmd([[ colorscheme PaperColor ]])
+      vim.cmd([[ set background=light ]])
 
       -- toggleBackground function
       vim.cmd([[ 
@@ -60,6 +61,15 @@ return {
     "numToStr/Comment.nvim",
     config = function()
       require("Comment").setup()
+    end,
+  },
+
+
+  -- gitsigns
+  {
+    "lewis6991/gitsigns.nvim",
+    config = function()
+      vim.cmd([[ set relativenumber ]])
     end,
   },
 
