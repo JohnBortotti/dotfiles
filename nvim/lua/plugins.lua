@@ -2,9 +2,6 @@ return {
   -- colorschemes
   {
     "rebelot/kanagawa.nvim",
-  },
-  {
-    "NLKNguyen/papercolor-theme",
     lazy = false,
     priority = 1000,
     config = function()
@@ -30,8 +27,8 @@ return {
 
       -- set colorscheme
       vim.cmd([[ set fillchars=eob:\ ]])
-      vim.cmd([[ colorscheme PaperColor ]])
-      vim.cmd([[ set background=light ]])
+      vim.cmd([[ colorscheme kanagawa-dragon ]])
+      vim.cmd([[ set background=dark ]])
 
       -- toggleBackground function
       vim.cmd([[ 
