@@ -12,19 +12,34 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
--- set leader
+-- nvim configs
 vim.cmd([[
   let mapleader="\<Space>"
+
+  "general configs
+  set number
+  set relativenumber
+  set t_Co=256
+  set encoding=UTF-8
+  set expandtab
+  set shiftwidth=2
+  set signcolumn=auto
+
+  "netrw
+  let netrw_liststyle=3
+  let netrw_winsize=30
+
+  "key mappigns
+  nnoremap <leader>e :find .<CR>
+  nnoremap <leader>h :noh<CR>
+  nnoremap <leader>t :Telescope<CR>
+  nnoremap <leader>x :bd<CR>
+  nnoremap <leader>w :w<CR>
+  nnoremap <leader>s :Telescope live_grep<CR>
+  nnoremap <leader>p :Telescope find_files<CR>
 ]])
 
--- custom function to toggle background (dark or light)
-function toggleBackground()
-  local current_bg = vim.o.background
-  if current_bg == 'dark' then
-    vim.o.background = 'light'
-  else
-    vim.o.background = 'dark'
-  end
-end
+-- buffer format alias
+vim.api.nvim_set_keymap('n', '<Leader>bf', '<Cmd>lua vim.lsp.buf.format()<CR>', { noremap = true, silent = true })
 
 require("lazy").setup("plugins")
